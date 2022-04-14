@@ -1,8 +1,10 @@
-import { Role } from "./role.js";
-import { data } from "./data.js";
-export class UserCRUD {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const role_js_1 = require("./role.js");
+const data_js_1 = require("./data.js");
+class UserCRUD {
     constructor() {
-        this.users = data;
+        this.users = data_js_1.data;
         this.tableContainer = document.querySelector('.Table');
         this.table = document.createElement("table");
         this.table.id = 'table';
@@ -21,7 +23,7 @@ export class UserCRUD {
         }
         // Adding a Header row in the Table
         let newHeader = this.table.insertRow();
-        for (const [key, value] of Object.entries(data[0])) {
+        for (const [key, value] of Object.entries(data_js_1.data[0])) {
             var cell = newHeader.insertCell();
             var text = document.createTextNode(key);
             cell.appendChild(text);
@@ -30,7 +32,7 @@ export class UserCRUD {
         for (let i = 0; i < this.users.length; i++) {
             let newRow = this.table.insertRow();
             newRow.id = i.toString();
-            for (const [key, value] of Object.entries(data[i])) {
+            for (const [key, value] of Object.entries(data_js_1.data[i])) {
                 let newCell = newRow.insertCell();
                 let text = document.createTextNode(value.length > 0 ? value : "");
                 newCell.append(text);
@@ -83,7 +85,7 @@ export class UserCRUD {
         //Creating a dropdown list for Roles.
         let select = document.createElement("select");
         select.classList.add("select");
-        for (const i in Role) {
+        for (const i in role_js_1.Role) {
             const option = document.createElement("option");
             option.value = i;
             option.textContent = i;
@@ -149,3 +151,4 @@ export class UserCRUD {
         this.createTable();
     }
 }
+exports.UserCRUD = UserCRUD;

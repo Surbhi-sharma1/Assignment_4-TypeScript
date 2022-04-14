@@ -9,6 +9,7 @@ const DateTimeFormatter =
             const result = originalMethod.apply(this, args);
             let header = document.getElementById("Date")! as HTMLHeadElement;
             header.innerHTML += `${args[0].toLocaleString('en-US')}`;
+            console.log(args[0]);
             return result;
         };
 

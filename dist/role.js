@@ -1,6 +1,8 @@
-export var Role;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Role;
 (function (Role) {
     Role["SuperAdmin"] = "SuperAdmin";
     Role["Admin"] = "Admin";
     Role["Subscriber"] = "Subscriber";
-})(Role || (Role = {}));
+})(Role = exports.Role || (exports.Role = {}));

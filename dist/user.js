@@ -1,4 +1,6 @@
-export class User {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class User {
     constructor(id, FirstName, MiddleName, LastName, Email, Phone, Role, Address) {
         this.id = id;
         this.FirstName = FirstName;
@@ -10,3 +12,4 @@ export class User {
         this.Address = Address;
     }
 }
+exports.User = User;

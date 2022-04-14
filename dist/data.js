@@ -1,4 +1,6 @@
-export const data = [
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.data = [
     {
         "id": "1",
         "FirstName": "Surbhi",

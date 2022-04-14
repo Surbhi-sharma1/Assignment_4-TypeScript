@@ -6,5 +6,5 @@ export interface CRUD<T> {
     update(ob: T): void;
     delete(ob: T): void;
     cancel(ob: T): void
-
 }
+//s

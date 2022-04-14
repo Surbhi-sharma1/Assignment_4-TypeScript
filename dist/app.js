@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7,13 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { UserCRUD } from "./userCrud.js";
+Object.defineProperty(exports, "__esModule", { value: true });
+const userCrud_js_1 = require("./userCrud.js");
 const DateTimeFormatter = (target, methodName, descriptor) => {
     const originalMethod = descriptor.value;
     descriptor.value = function (...args) {
         const result = originalMethod.apply(this, args);
         let header = document.getElementById("Date");
         header.innerHTML += `${args[0].toLocaleString('en-US')}`;
+        console.log(args[0]);
         return result;
     };
     return descriptor;
@@ -23,7 +26,7 @@ class Main {
         this.date = new Date();
         this.loadButton = document.querySelector(".loadButton");
         this.loadButton.id = "button1";
-        this.userCRUD = new UserCRUD();
+        this.userCRUD = new userCrud_js_1.UserCRUD();
         this.loadButton.addEventListener('click', () => this.load());
     }
     load() {
